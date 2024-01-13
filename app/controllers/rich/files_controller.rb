@@ -6,6 +6,12 @@ module Rich
 
     layout "rich/application"
 
+    include ActionView::Helpers::TagHelper
+    include ActionView::Helpers::AssetTagHelper
+    include ActionView::Helpers::JavaScriptHelper
+    include RedmineCkeditor::Helper
+    helper RedmineCkeditor::Helper
+
     def index
       @type = params[:type]
 
