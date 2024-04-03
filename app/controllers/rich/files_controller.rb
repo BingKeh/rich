@@ -62,7 +62,7 @@ module Rich
       end
 
       if @file.save
-        response = { :success => true, :rich_id => @file.id }
+        response = { :success => true, :rich_id => @file.id, :url => @file.rich_file.url(), :prefix => Redmine::Utils.relative_url_root }
       else
         response = { :success => false,
                      :error => "Could not upload your file:\n- "+@file.errors.to_a[-1].to_s,
